@@ -1,0 +1,42 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.7.18'
+    id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+    id 'application'
+    id 'groovy'
+}
+
+group = 'com.task'
+version = '1.0.0'
+sourceCompatibility = '17'
+
+repositories {
+    mavenCentral()
+}
+
+springBoot {
+    mainClass = 'com.task.Main'
+}
+
+bootRun {
+    mainClass = 'com.task.Main'
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+
+    implementation 'org.springframework.boot:spring-boot-starter-logging'
+
+    compileOnly 'org.projectlombok:lombok:1.18.30'
+    annotationProcessor 'org.projectlombok:lombok:1.18.30'
+
+    implementation 'org.springframework:spring-oxm'
+
+    implementation 'org.codehaus.groovy:groovy:3.0.19'
+    implementation 'org.codehaus.groovy:groovy-xml:3.0.19'
+
+    implementation 'org.postgresql:postgresql:42.7.2'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
